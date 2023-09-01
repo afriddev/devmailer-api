@@ -8,7 +8,7 @@ app = FastAPI()
 async def root():
     return{"EmailServerApi":{
         "version":"1.1.2",
-        "status":"running"
+        "status":"running..."
     },
            "help":"/help",
            "defaultPreferences":"/defaultPreferences"
