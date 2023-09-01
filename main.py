@@ -8,7 +8,7 @@ async def root():
     return{"EmailServerApi":{
         "version":"1.1.2",
         "status":"running",
-        "server":"https://emailapi-tgbc.onrender.com"
+      
     },
            "help":"/help",
            "default OTP Preferences":"/defaultOTPPreferences",
