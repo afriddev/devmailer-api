@@ -1,5 +1,5 @@
 # Email API Written In Pure Python3 </br>
-Server Running On : https://emailapi-tgbc.onrender.com
+Server Running On : https://emailapi-zrik.onrender.com/
 ### Installation</br>
 
 
@@ -11,14 +11,16 @@ Server Running On : https://emailapi-tgbc.onrender.com
 
 ### usage API
 1. Custom Preferences 
-  - https://emailapi-tgbc.onrender.com/SendEmail/xyz@gmail.com
+  - https://emailapi-zrik.onrender.com/xyz@gmail.com
 2. Custom Otp 
-  - https://emailapi-tgbc.onrender.com/SendEmail/xyz@gmail.com/123456
-3. Custom subject 
-  - https://emailapi-tgbc.onrender.com/SendEmail/xyz@gmail.com/123456/ExampleOtp
-4. Custom body 
-  - https://emailapi-tgbc.onrender.com/SendEmail/xyz@gmail.com/123456/ExampleOtp/yourVerificationCodeiS:123456
+  - https://emailapi-zrik.onrender.com/xyz@gmail.com/123456
+3. Custom OTP subject 
+  - https://emailapi-zrik.onrender.com/SendEmail/xyz@gmail.com/123456/ExampleOtp
+4. Custom OTP body 
+  - [server](https://emailapi-zrik.onrender.com/SendEmail/xyz@gmail.com/123456/ExampleOtp/yourVerificationCodeiS:123456
 5. Help 
-  - https://emailapi-tgbc.onrender.com/help
+  - https://emailapi-zrik.onrender.com/help
+6. Custom Message
+  -https://emailapi-zrik.onrender.com/Custom/xyz@gmail.com/hello/HiThisIsAfrid
 
    
