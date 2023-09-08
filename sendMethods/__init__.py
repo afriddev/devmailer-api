@@ -1,1 +1,2 @@
-from .sendTest import sendTest
+from .send import send
+from .sendDefault import *

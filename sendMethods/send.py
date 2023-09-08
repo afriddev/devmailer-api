@@ -13,24 +13,29 @@ from server import smtpLib
 
 
 
-class sendTest:
+class send:
     def __init__(self,**userData):
         #init toEmail for useage
         self.toEmail = userData["toEmail"]
+        self.fromTitle = userData["fromTitle"]
+        self.fromEmail = userData["fromEmail"]
+        self.subject = userData["subject"]
+        self.body = userData["body"]
+        
         """
         init sendcore for message for
 
         """
         
         sendCore = messageCore(
-           fromTitle=defaultFromTitle,
-           fromEmail=defaultEmail,
+           fromTitle=self.fromTitle,
+           fromEmail=self.fromEmail,
            toEmail=self.toEmail,
-           subject=defaultSubject,
-           body=defaultBody
+           subject=self.subject,
+           body=self.body
         )
         self.message = sendCore.messageBody()
-        print(self.message)
+        
         
     def sendMessage(self):
       
@@ -38,9 +43,11 @@ class sendTest:
         smtpLib init
 
         """
-        serverInit = smtpLib(self.toEmail,self.message,defaultEmail,defaultPasskey)
+        serverInit = smtpLib(self.toEmail,self.message,self.fromEmail,
+        
+        defaultPasskey)
         serverInit.sendEmail()
-        print("sendMessage")
+        
 
         
 
