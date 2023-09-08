@@ -13,7 +13,7 @@ from server import smtpLib
 
 
 
-class send:
+class sendCustom:
     def __init__(self,**userData):
         #init toEmail for useage
         self.toEmail = userData["toEmail"]
@@ -21,6 +21,7 @@ class send:
         self.fromEmail = userData["fromEmail"]
         self.subject = userData["subject"]
         self.body = userData["body"]
+        self.passkey = userData["passkey"]
         
         """
         init sendcore for message for
@@ -37,7 +38,7 @@ class send:
         self.message = sendCore.messageBody()
         
         
-    def sendMessage(self):
+    def customMessage(self):
       
         """
         smtpLib init
@@ -45,14 +46,14 @@ class send:
         """
         serverInit = smtpLib(self.toEmail,self.message,self.fromEmail,
         
-        defaultPasskey)
+        self.passkey)
         messageFromServer = serverInit.sendEmail()
-        if(messageFromServer == "emailSendSuccess"):
-            return "emailSendSuccess"
+        if(messageFromServer == "sendEmaiLSuccess"):
+            return "sendEmailSuccess"
         elif(messageFromServer == "wrongCredentials"):
             return "wrongCredentials"
         else:
-            return "emailSendFailed"
+            return "sendEmailFailed"
 
     
 
