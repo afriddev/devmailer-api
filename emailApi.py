@@ -39,7 +39,7 @@ regexEmailPattern = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,7}\b'
 initalize fastapi
 
 """
-emailAPI = FastAPI()
+app = FastAPI()
 
 
 """
@@ -47,7 +47,7 @@ emailAPI = FastAPI()
 422 Exception
 
 """
-@emailAPI.exception_handler(RequestValidationError)
+@app.exception_handler(RequestValidationError)
 async def validation_exception_handler(request: Request, exc: RequestValidationError):
     return JSONResponse(
         status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
@@ -63,7 +63,7 @@ async def validation_exception_handler(request: Request, exc: RequestValidationE
 404 Exception
 
 """
-@emailAPI.exception_handler(404)
+@app.exception_handler(404)
 async def not_found_exception_handler(request: Request, exc: HTTPException):
     return JSONResponse(status_code=status.HTTP_404_NOT_FOUND,
         content=jsonable_encoder(
@@ -79,7 +79,7 @@ Root Of The EmailAPI
 
 """
 
-@emailAPI.get("/")
+@app.get("/")
 def root():
     return {
         "message":{
@@ -174,5 +174,4 @@ def test(data: emailRequestModel):
         }
 
 
-if __name__ == "__main__":
-    uvicorn.run("emailApi:emailAPI", reload=True)
+
