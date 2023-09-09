@@ -130,7 +130,7 @@ def test(data: emailRequestModel):
         else:
             if (data.fromEmail != defaultEmail and data.passkey == None):
                 return {
-                    "message": "passkeyrequired"
+                    "message": "passkeyRequired"
                 }
             elif (data.fromEmail == defaultEmail):
                 try:
