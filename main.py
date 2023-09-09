@@ -89,7 +89,7 @@ def root():
     }
 
 
-@emailAPI.post("/sendEmail/")
+@app.post("/sendEmail/")
 def test(data: emailRequestModel):
     if (re.fullmatch(regexEmailPattern, data.toEmail)):
         if (data.passkey != None and data.fromEmail != defaultEmail):
