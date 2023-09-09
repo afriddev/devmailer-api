@@ -83,7 +83,7 @@ Root Of The EmailAPI
 def root():
     return {
         "message":{
-            "serverStatus":"running..",
+            "serverStatus":"running",
             "version":"1.1.3"
         }
     }
