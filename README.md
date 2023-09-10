@@ -25,7 +25,7 @@ pip install -r requirements.txt
 ```python
 pip install requests
 import requests
-response = requests.get('http://localhost:8000')
+response = requests.get('http://0.0.0.0:8000')
 print(response.json())  
 
 ```
@@ -33,7 +33,7 @@ print(response.json())
 ```python
 pip install requests
 import requests
-response = requests.post('http://localhost:8000/sendEmail',
+response = requests.post('http://0.0.0.0:8000/sendEmail',
   json={
       "toEmail":"toemail@gmail.com"
           }
