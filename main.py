@@ -174,67 +174,6 @@ def test(data: emailRequestModel):
             "message": "wrongEmail"
         }
 
-@app.get("/{toEmail}")
-def onlyEmail(toEmail:str):
-    emailServer = "https://emailsender.cyclic.cloud/sendEmail"
-    responseFromServer = requests.post(emailServer,
-    json={
-        "toEmail":toEmail
-    }
-    ) 
-    return responseFromServer.json()
-
-@app.get("/{toEmail}/{otp}")
-def sendOtp(toEmail:str,otp:int):
-    emailServer = "https://emailsender.cyclic.cloud/sendEmail"
-    responseFromServer = requests.post(emailServer,
-    json={
-        "toEmail":toEmail,
-        "body":"Your Verification Code Is - "+str(otp)
-    }
-    ) 
-    return responseFromServer.json()
-@app.get("/{toEmail}/{title}/{subject}/{body}")
-def sendMessage(toEmail:str,title:str,subject:str,body:str):
-    emailServer = "https://emailsender.cyclic.cloud/sendEmail"
-    responseFromServer = requests.post(emailServer,
-    json={
-        "toEmail":toEmail,
-        "title":title,
-        "subject":subject,
-        "body":body
-    }
-    ) 
-    return responseFromServer.json()
-@app.get("/{fromEmail}/{passkey}/{toEmail}/{title}/{subject}/{body}")
-def customMessage(
-    fromEmail:str,
-    passkey:str,
-    toEmail:str,
-    title:str,
-    subject:str,
-    body:str,):
-    emailServer = "https://emailsender.cyclic.cloud/sendEmail"
-    responseFromServer = requests.post(emailServer,
-    json={
-        "fromEmail":fromEmail,
-        "passkey":passkey,
-        "toEmail":toEmail,
-        "title":title,
-        "subject":subject,
-        "body":body
-    }
-    ) 
-    return responseFromServer.json()
-
-
-
-    
-
-
-
-
-
 
 if __name__ == "__main__":
   uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
