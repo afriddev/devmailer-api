@@ -90,10 +90,28 @@ def root():
         }
     }
 
+from fastapi import Request
+
+@app.post('/send')
+async def main(request: Request):
+    content_type = request.headers.get('Content-Type')
+    
+    if content_type is None:
+        return 'No Content-Type provided.'
+    elif content_type == 'application/json':
+        try:
+            json = await request.json()
+            return json
+        except JSONDecodeError:
+            return 'Invalid JSON data.'
+    else:
+        return 'Content-Type not supported.'
+
+
 
 @app.post("/sendEmail/")
-def test(data: emailRequestModel = Body(default=None, embed=True)):
-    if (re.fullmatch(regexEmailPattern, data.toEmail)):
+def test(data: emailRequestModel=Body(default=None, embed=True)):
+    if (re.fullmatch(regexEmailPattern, body.toEmail)):
         if (data.passkey != None and data.fromEmail != defaultEmail):
 
             try:
