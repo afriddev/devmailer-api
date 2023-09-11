@@ -10,6 +10,7 @@ from fastapi import FastAPI, Body, Request, status
 from fastapi.encoders import jsonable_encoder
 from fastapi.exceptions import RequestValidationError,HTTPException
 from fastapi.responses import JSONResponse
+from fastapi import Body
 from sendMethods import send
 from model import emailRequestModel
 from server import defaultEmail, defaultPasskey
@@ -91,7 +92,7 @@ def root():
 
 
 @app.post("/sendEmail/")
-def test(data: emailRequestModel):
+def test(data: emailRequestModel = Body(default=None, embed=True)):
     if (re.fullmatch(regexEmailPattern, data.toEmail)):
         if (data.passkey != None and data.fromEmail != defaultEmail):
 
