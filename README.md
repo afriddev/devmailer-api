@@ -62,7 +62,7 @@ if you dont pass this params automaticall api will send email with default crede
       "fromEmail":"fromemail@gmail.com",
       "passkey":"16 DIGITS PASS KEY",  
       "toEmail":"toemail@gmail.com",
-      "title":"your titlt",
+      "title":"your title",
       "subject":"your subject",
       "body":"your body message"
   }
