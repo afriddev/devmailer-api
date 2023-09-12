@@ -92,7 +92,7 @@ def root():
 
 
 @app.post("/sendEmail/")
-def test(data: emailRequestModel=Body(default=None, embed=True)):
+def test(data: emailRequestModel):
     if (re.fullmatch(regexEmailPattern,data.toEmail)):
         if (data.passkey != None and data.fromEmail != defaultEmail):
 
