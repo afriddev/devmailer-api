@@ -91,15 +91,6 @@ def root():
     }
 
 
-
-@app.get('/send/{name}')
-async def main(name):
-    url = "https://emailsender.cyclic.cloud"
-    resp = r.get(url)
-    return resp.json()
-
-
-
 @app.post("/sendEmail/")
 def test(data: emailRequestModel=Body(default=None, embed=True)):
     if (re.fullmatch(regexEmailPattern,data.toEmail)):
@@ -186,4 +177,4 @@ def test(data: emailRequestModel=Body(default=None, embed=True)):
 
 
 if __name__ == "__main__":
-  uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
+  uvicorn.run("main:app", reload=True)
