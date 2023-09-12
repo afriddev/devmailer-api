@@ -4,11 +4,11 @@
 # pythonemailapi
   pythonemailapi is written in pure python with the help of fastapi,you can sned emails by using this api and seamlessly integrate this api in you code very easily
 
-## use in your code 
+## Use in your code 
 - [python](https://pypi.org/project/emailotp/)
 - [dart](https://pub.dev/packages/email_sender)
   
-## installing dependencies
+## Installing dependencies
   Install required modules for this project
 
 ```
@@ -21,7 +21,7 @@ pip install -r requirements.txt
  python main.py
 ```
 
-## useage
+## Useage
 ```python
 pip install requests
 import requests
@@ -41,7 +41,7 @@ response = requests.post('http://0.0.0.0:8000/sendEmail',
 print(response.json())  
 
 ```
-## generate passkey
+## generate app password
 
 -  [Click Here](https://support.google.com/accounts/answer/185833?hl=en)
 
