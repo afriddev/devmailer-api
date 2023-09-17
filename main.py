@@ -107,7 +107,7 @@ def test(data: emailRequestModel):
                                 )
                 messageFromServer = sendInit.customMessage()
                 if(messageFromServer == "sendEmailFailed" ):
-                    json = {"message":"sendEmailfailed"}
+                    json = {"message":"sendEmailFailed"}
                 elif(messageFromServer == "wrongCredentials"):
                     json = {"message":"wrongCredentials"}
                 elif(messageFromServer == "sendEmailSuccess"):
