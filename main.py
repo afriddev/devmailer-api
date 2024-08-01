@@ -24,11 +24,6 @@ importing modules section end
 
 """
 
-
-
-
-
-
 """
 
 emailValidation Regex Pattern

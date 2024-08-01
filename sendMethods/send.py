@@ -9,10 +9,6 @@ from server import defaultEmail,defaultPasskey
 #importing smtplib from serverCore
 from server import smtpLib
 
-
-
-
-
 class send:
     def __init__(self,**userData):
         #init toEmail for useage
