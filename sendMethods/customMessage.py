@@ -48,8 +48,8 @@ class sendCustom:
         
         self.passkey)
         messageFromServer = serverInit.sendEmail()
-        if(messageFromServer == "sendEmaiLSuccess"):
-            return "sendEmailSuccess"
+        if(messageFromServer == "emailSendSuccess"):
+            return "emailSendSuccess"
         elif(messageFromServer == "wrongCredentials"):
             return "wrongCredentials"
         else:

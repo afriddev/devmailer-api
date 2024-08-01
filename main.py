@@ -91,7 +91,7 @@ def root():
     return {
         "message":{
             "serverStatus":"running",
-            "version":"1.1.3"
+            "version":"1.4.2"
         }
     }
 
@@ -115,7 +115,7 @@ def test(data: emailRequestModel):
                     json = {"message":"sendEmailFailed"}
                 elif(messageFromServer == "wrongCredentials"):
                     json = {"message":"wrongCredentials"}
-                elif(messageFromServer == "sendEmailSuccess"):
+                elif(messageFromServer == "emailSendSuccess"):
                      json = {
                     "message": messageFromServer,
                     "title": data.title,
