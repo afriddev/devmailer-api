@@ -14,7 +14,7 @@ class smtpLib:
             email_server = smtplib.SMTP_SSL(smtpGmail,smtpPort)
             try:
                 email_server.login(self.fromEmail[0],self.fromEmailPasskey)
-                email_server.sendmail(self.fromEmail,self.email,self.message[0])
+                email_server.sendmail(self.fromEmail[0],self.email,self.message[0])
             
                 return "emailSendSuccess"
             except:
