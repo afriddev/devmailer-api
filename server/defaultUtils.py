@@ -1,2 +1,2 @@
-defaultEmail = "369afrid@gmail.com"
-defaultPasskey = "kftv mbrs whqb rqrn"
+defaultEmail = "defaultemailapi@gmail.com"
+defaultPasskey = "jxss axeo cuov wrkv"
