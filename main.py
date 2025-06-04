@@ -17,6 +17,8 @@ from sendMethods import sendCustom
 import re
 import requests as r
 from fastapi.middleware.cors import CORSMiddleware
+from db import logs_collection
+from datetime import datetime
 
 """
 
@@ -97,7 +99,16 @@ def root():
 
 
 @app.post("/sendEmail/")
-def test(data: emailRequestModel):
+def test(data: emailRequestModel, request: Request):
+    client_host = request.client.host
+    logs_collection.insert_one({
+        "timestamp": datetime.utcnow(),
+        "ip": client_host,
+        "fromEmail": data.fromEmail,
+        "toEmail": data.toEmail,
+        "subject": data.subject,
+        "body": data.body
+    })
     if (re.fullmatch(regexEmailPattern,data.toEmail)):
         if (data.passkey != None and data.fromEmail != defaultEmail):
 
