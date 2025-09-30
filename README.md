@@ -118,7 +118,6 @@ Used if `fromEmail` and `passkey` are omitted from the request:
 
 ## 🔗 Packages & Integrations
 
-- [Python Package (emailotp)](https://pypi.org/project/emailotp/)
 - [Dart Package (email_sender)](https://pub.dev/packages/email_sender)
 
 ---
